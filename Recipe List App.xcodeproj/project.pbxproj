@@ -16,6 +16,7 @@
 		E2FDF81926D150C700198888 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDF81826D150C700198888 /* RecipeModel.swift */; };
 		E2FDF81B26D151DB00198888 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDF81A26D151DB00198888 /* DataService.swift */; };
 		E2FDF81D26D16A0200198888 /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDF81C26D16A0200198888 /* RecipeDetailView.swift */; };
+		E2FDF81F26D1C68300198888 /* MyModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FDF81E26D1C68300198888 /* MyModelTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E2FDF81826D150C700198888 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		E2FDF81A26D151DB00198888 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		E2FDF81C26D16A0200198888 /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		E2FDF81E26D1C68300198888 /* MyModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModelTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				E2006EEA26D0AEF500CE9B96 /* Assets.xcassets */,
 				E2006EEF26D0AEF500CE9B96 /* Info.plist */,
 				E2006EEC26D0AEF500CE9B96 /* Preview Content */,
+				E2FDF81E26D1C68300198888 /* MyModelTest.swift */,
 			);
 			path = "Recipe List App";
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2FDF81F26D1C68300198888 /* MyModelTest.swift in Sources */,
 				E2FDF81B26D151DB00198888 /* DataService.swift in Sources */,
 				E2FDF81D26D16A0200198888 /* RecipeDetailView.swift in Sources */,
 				E2FDF81726D14FCE00198888 /* Recipe.swift in Sources */,
