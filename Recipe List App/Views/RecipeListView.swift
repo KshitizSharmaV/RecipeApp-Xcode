@@ -9,44 +9,47 @@ import SwiftUI
 
 struct RecipeListView: View {
     
-    @ObservedObject var model = RecipeModel()
+    @EnvironmentObject var model: RecipeModel
     var body: some View {
         
-        /*
-        ScrollView(.vertical, showsIndicators: true) {
+        NavigationView {
+            
             VStack(alignment:.leading) {
-                ForEach(model.recipes) { r in
-                    HStack() {
-                        Image(r.image)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width:50, height: 50, alignment:.center)
-                            .clipped()
-                            .cornerRadius(5.0)
-                        Text(r.name)
+                Text("All Recipes")
+                    .bold()
+                    .padding(.top, 40)
+                    .font(Font.custom("Avenir Heavy",size:24))
+                
+                ScrollView {
+                    LazyVStack(alignment:.leading) {
+                        ForEach(model.recipes){ r in
+                            NavigationLink(
+                                destination: RecipeDetailView(recipe:r),
+                                label: {
+                                    HStack() {
+                                        Image(r.image)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width:50, height: 50, alignment:.center)
+                                            .clipped()
+                                            .cornerRadius(5.0)
+                                        
+                                        VStack(alignment:.leading){
+                                            Text(r.name)
+                                                .foregroundColor(.black)
+                                                .font(Font.custom("Avenir Heavy",size:16))
+                                            RecipeHighlights(highlights: r.highlights)
+                                                .foregroundColor(.black)
+                                        }
+                                        
+                                    }
+                                })
                         }
                     }
                 }
             }
-        */
-        
-        NavigationView {
-            List(model.recipes){ r in
-                NavigationLink(
-                    destination: RecipeDetailView(recipe:r),
-                    label: {
-                        HStack() {
-                            Image(r.image)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width:50, height: 50, alignment:.center)
-                                .clipped()
-                                .cornerRadius(5.0)
-                            Text(r.name)
-                    }
-                })
-            }
-            .navigationBarTitle("All Recipes")
+            .navigationBarHidden(true)
+            .padding(.leading)
         }
     }
 }
@@ -54,5 +57,6 @@ struct RecipeListView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeListView()
+            .environmentObject(RecipeModel())
     }
 }

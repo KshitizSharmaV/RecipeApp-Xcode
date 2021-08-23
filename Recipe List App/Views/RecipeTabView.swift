@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct RecipeTabView: View {
-  
-    @State var tabIndex = 1
     
+    @State var tabIndex = 1
     var body : some View {
         
         TabView (selection : $tabIndex) {
            
-            Text("FeaturedView")
+            RecipeFeaturedView()
                 .tabItem {
                     VStack {
                         Image(systemName: "star.fill")
@@ -31,7 +30,7 @@ struct RecipeTabView: View {
                 }
             }
 
-        }
+        }.environmentObject(RecipeModel())
     }
 }
 
